@@ -2,7 +2,7 @@
 
 while ($line = <STDIN>){
    chomp $line;
-   ($student, $mark) = split /\s+/, $line;
+   ($student, $mark) = $line =~ /\S+/g;
    if ($mark =~ /^\d+$/){
       $grade = "HD" if ($mark >= 85 && $mark <= 100);
       $grade = "DN" if ($mark >= 75 && $mark < 85);
