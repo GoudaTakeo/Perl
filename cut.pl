@@ -6,6 +6,6 @@ open F, "<$ARGV[2]" or die "$0: cannot open $ARGV[2]: $!";
 
 while ($line = <F>){
    chomp $line;
-   @chars = $line =~ /\S/g;
+   @chars = split //, $line;
    print @chars[$start-1..$finish-1],  "\n";
 }
