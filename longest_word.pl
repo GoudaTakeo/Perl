@@ -5,7 +5,7 @@ $num_words = 0;
 
 while ($line = <STDIN>){
    chomp $line;
-   @words = $line =~ /([\w'-]+)/g;
+   @words = $line =~ /[\w'-]+/g;
    foreach $word (@words){
       if (length $word > length $max_word){
          @max_words = ();
@@ -15,8 +15,7 @@ while ($line = <STDIN>){
          push @max_words, $word;
       }
       $num_words++;
-
    }
 }
 
-print "Max word(s): @max_words, Number of words: $num_words\n";
+print "Max word(s): @max_words, Num words: $num_words\n";
